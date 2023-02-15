@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(45deg, red, blue);
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.cards {
+  width: 70%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-card {
+  height: 400px;
+  width: 260px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1500ms linear;
+}
+.single-card img {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.single-card.middle-card.active {
+  transform: rotateY(180deg);
+}
+
+.single-card.right-card.active {
+  transform: rotateY(180deg) rotate(-10deg);
+}
+
+.single-card.left-card.active {
+  transform: rotateY(180deg) rotate(10deg);
+}
+
+.card-front,
+.card-back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 8px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  cursor: pointer;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.middle-card {
+  z-index: 1;
+}
+
+.right-card {
+  position: relative;
+  top: 25px;
+  left: -50px;
+  transform: rotate(10deg);
+}
+
+.left-card {
+  position: relative;
+  top: 25px;
+  left: 50px;
+  transform: rotate(-10deg);
+}/*# sourceMappingURL=style.css.map */
